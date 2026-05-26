@@ -119,6 +119,4 @@ aurel-jewelry/
 
 Fully responsive across Desktop, Tablet, and Mobile with touch-friendly interactions.
 
----
 
-*Crafted with precision and passion — AUREL Fine Jewelry*
