@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #FAF6F8;
+  color: #1A0E14;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #8B2E4A;
+  color: #FDF9FB;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FAF6F8; }
+::-webkit-scrollbar-thumb { background: #8B2E4A; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #5C1A30; }
+
+/* 3D Card tilt on hover */
+.card-3d {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+}
+.card-3d:hover {
+  transform: perspective(800px) rotateY(-5deg) rotateX(3deg) scale(1.03);
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.15), -5px -5px 20px rgba(255,255,255,0.8);
+}
+
+/* Metal color filters */
+.metal-yellow-gold {
+  filter: sepia(15%) saturate(140%) brightness(105%) hue-rotate(5deg);
+}
+.metal-rose-gold {
+  filter: sepia(35%) saturate(130%) hue-rotate(335deg) brightness(102%);
+}
+.metal-silver {
+  filter: saturate(25%) brightness(115%) contrast(95%);
+}
+
+/* Entrance animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slideUp { animation: slideUp 0.7s ease-out forwards; }
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-scaleIn { animation: scaleIn 0.5s ease-out forwards; }
+
+/* Confetti for order confirmation */
+@keyframes confetti-fall {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
